@@ -1,0 +1,1 @@
+ALTER TABLE `user_settings` ADD `color_scheme_mode` text;

@@ -3,12 +3,14 @@ name: Package Deliverables for Capstone
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
   package:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -19,8 +21,11 @@ jobs:
       - name: Package files
         run: bun run zip
 
-      - name: Upload deliverable
-        uses: actions/upload-artifact@v4
-        with:
-          name: Deliverables
-          path: out/Deliverables.zip
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="v$(date +%Y.%m.%d)-${GITHUB_SHA::7}"
+          gh release create "$tag" out/Deliverables.zip \
+            --title "Deliverables $tag" \
+            --notes "Auto-packaged from ${GITHUB_SHA::7}"

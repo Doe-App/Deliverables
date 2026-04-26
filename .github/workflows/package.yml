@@ -1,0 +1,26 @@
+name: Package Deliverables for Capstone
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Package files
+        run: bun run zip
+
+      - name: Upload deliverable
+        uses: actions/upload-artifact@v4
+        with:
+          name: Deliverables
+          path: out/Deliverables.zip

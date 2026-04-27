@@ -4,8 +4,8 @@ Is a "Required" section.
 
 ## Project
 
-- [ ] Problem statement and motivation
-- [ ] Requirements (functional & non-functional)
+- [x] Problem statement and motivation
+- [x] Requirements (functional & non-functional)
 - [x] Architecture diagrams
 - [x] Design artifacts (UML, ER diagrams, flowcharts, etc.)
 - [ ] Use cases or user stories
@@ -13,7 +13,7 @@ Is a "Required" section.
 
 ## Meeting Minutes
 
-- [ ] Port over all files from meeting minutes
+- [x] Port over all files from meeting minutes
 
 ## "Optional but Strongly Encouraged"
 

@@ -8,7 +8,7 @@ Is a "Required" section.
 - [x] Requirements (functional & non-functional)
 - [x] Architecture diagrams
 - [x] Design artifacts (UML, ER diagrams, flowcharts, etc.)
-- [ ] Use cases or user stories
+- [x] Use cases or user stories
 - [x] Wireframes (if applicable)
 
 ## Meeting Minutes
